@@ -13,7 +13,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    'asset_url' => env('ASSET_URL', null),
+    /* 'asset_url' => env('ASSET_URL', null), */
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Jakarta',
 
     /*
     |--------------------------------------------------------------------------
@@ -173,6 +173,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*
