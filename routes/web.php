@@ -11,5 +11,8 @@
 |
 */
 
-Route::get('/', 'Web\DashboardController@index');
-Route::get('/pegawai', 'PegawaiController@index');
+Auth::routes();
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', 'Web\DashboardController@index');
+    Route::get('/pegawai', 'PegawaiController@index');
+});
