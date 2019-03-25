@@ -74,7 +74,8 @@ Dribbble: www.dribbble.com/erwinra7
 							<div class="m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-stack__item--middle m-brand__logo">
 									<a href="index.html" class="m-brand__logo-wrapper">
-										<img alt="" src="assets/demo/media/img/logo/logo.png" />
+                                        <h3>Logo</h3>
+										{{--  <img alt="" src="{{ asset('erwintheme/assets/app/media/img/logo/logo.png')}}" />   --}}
 									</a>
 								</div>
 								<div class="m-stack__item m-stack__item--middle m-brand__tools">
@@ -115,11 +116,37 @@ Dribbble: www.dribbble.com/erwinra7
 
 
 
-							<!-- BEGIN: Topbar -->
 							<div id="m_header_topbar" class="m-topbar  m-stack m-stack--ver m-stack--general">
 								<div class="m-stack__item m-topbar__nav-wrapper">
 									<ul class="m-topbar__nav m-nav m-nav--inline">
-
+										<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
+											<a href="#" class="m-nav__link m-dropdown__toggle">
+												
+											</a>
+											<div class="m-dropdown__wrapper" style="z-index: 101;">
+												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
+												<div class="m-dropdown__inner ">
+													<div class="m-dropdown__header">
+														<form class="m-list-search__form">
+															<div class="m-list-search__form-wrapper">
+																<span class="m-list-search__form-input-wrapper">
+																	<input id="m_quicksearch_input" autocomplete="off" type="text" name="q" class="m-list-search__form-input" value="" placeholder="Search...">
+																</span>
+																<span class="m-list-search__form-icon-close" id="m_quicksearch_close">
+																	<i class="la la-remove"></i>
+																</span>
+															</div>
+														</form>
+													</div>
+													<div class="m-dropdown__body">
+														<div class="m-dropdown__scrollable m-scrollable m-scroller ps" data-scrollable="true" data-height="300" data-mobile-height="200" style="height: 300px; overflow: hidden;">
+															<div class="m-dropdown__content">
+															</div>
+														<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
+													</div>
+												</div>
+											</div>
+										</li>
 										<li class="m-nav__item m-topbar__notifications m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center 	m-dropdown--mobile-full-width" m-dropdown-toggle="click" m-dropdown-persistent="1">
 											<a href="#" class="m-nav__link m-dropdown__toggle" id="m_topbar_notification_icon">
 												<span class="m-nav__link-icon">
@@ -151,7 +178,7 @@ Dribbble: www.dribbble.com/erwinra7
 															</ul>
 															<div class="tab-content">
 																<div class="tab-pane active" id="topbar_notifications_notifications" role="tabpanel">
-																	<div class="m-scrollable" data-scrollable="true" data-height="250" data-mobile-height="200">
+																	<div class="m-scrollable m-scroller ps" data-scrollable="true" data-height="250" data-mobile-height="200" style="height: 250px; overflow: hidden;">
 																		<div class="m-list-timeline m-list-timeline--skin-light">
 																			<div class="m-list-timeline__items">
 																				<div class="m-list-timeline__item">
@@ -196,10 +223,10 @@ Dribbble: www.dribbble.com/erwinra7
 																				</div>
 																			</div>
 																		</div>
-																	</div>
+																	<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 																</div>
 																<div class="tab-pane" id="topbar_notifications_events" role="tabpanel">
-																	<div class="m-scrollable" data-scrollable="true" data-height="250" data-mobile-height="200">
+																	<div class="m-scrollable m-scroller ps" data-scrollable="true" data-height="250" data-mobile-height="200" style="height: 250px; overflow: hidden;">
 																		<div class="m-list-timeline m-list-timeline--skin-light">
 																			<div class="m-list-timeline__items">
 																				<div class="m-list-timeline__item">
@@ -234,7 +261,7 @@ Dribbble: www.dribbble.com/erwinra7
 																				</div>
 																			</div>
 																		</div>
-																	</div>
+																	<div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 4px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></div>
 																</div>
 																<div class="tab-pane" id="topbar_notifications_logs" role="tabpanel">
 																	<div class="m-stack m-stack--ver m-stack--general" style="min-height: 180px;">
@@ -249,10 +276,55 @@ Dribbble: www.dribbble.com/erwinra7
 												</div>
 											</div>
 										</li>
+										<li class="m-nav__item m-topbar__quick-actions m-dropdown m-dropdown--skin-light m-dropdown--large m-dropdown--arrow m-dropdown--align-right m-dropdown--align-push m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
+											<a href="#" class="m-nav__link m-dropdown__toggle">
+												<span class="m-nav__link-icon">
+													<span class="m-nav__link-icon-wrapper"><i class="flaticon-share"></i></span>
+													<span class="m-nav__link-badge m-badge m-badge--accent">5</span>
+												</span>
+											</a>
+											<div class="m-dropdown__wrapper">
+												<span class="m-dropdown__arrow m-dropdown__arrow--right m-dropdown__arrow--adjust"></span>
+												<div class="m-dropdown__inner">
+													<div class="m-dropdown__header m--align-center">
+														<span class="m-dropdown__header-title">Quick Actions</span>
+														<span class="m-dropdown__header-subtitle">Shortcuts</span>
+													</div>
+													<div class="m-dropdown__body m-dropdown__body--paddingless">
+														<div class="m-dropdown__content">
+															<div class="m-scrollable" data-scrollable="false" data-height="380" data-mobile-height="200">
+																<div class="m-nav-grid m-nav-grid--skin-light">
+																	<div class="m-nav-grid__row">
+																		<a href="#" class="m-nav-grid__item">
+																			<i class="m-nav-grid__icon flaticon-file"></i>
+																			<span class="m-nav-grid__text">Generate Report</span>
+																		</a>
+																		<a href="#" class="m-nav-grid__item">
+																			<i class="m-nav-grid__icon flaticon-time"></i>
+																			<span class="m-nav-grid__text">Add New Event</span>
+																		</a>
+																	</div>
+																	<div class="m-nav-grid__row">
+																		<a href="#" class="m-nav-grid__item">
+																			<i class="m-nav-grid__icon flaticon-folder"></i>
+																			<span class="m-nav-grid__text">Create New Task</span>
+																		</a>
+																		<a href="#" class="m-nav-grid__item">
+																			<i class="m-nav-grid__icon flaticon-clipboard"></i>
+																			<span class="m-nav-grid__text">Completed Tasks</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
 										<li class="m-nav__item m-topbar__user-profile  m-dropdown m-dropdown--medium m-dropdown--arrow  m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light" m-dropdown-toggle="click">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
 												<span class="m-topbar__userpic">
-													<img src="assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless m--img-centered" alt="" />
+													<img src="{{ asset('erwintheme/assets/app/media/img/users/user4.jpg')}}" class="m--img-rounded m--marginless m--img-centered" alt="">
 												</span>
 												<span class="m-nav__link-icon m-topbar__usericon  m--hide">
 													<span class="m-nav__link-icon-wrapper"><i class="flaticon-user-ok"></i></span>
@@ -265,7 +337,7 @@ Dribbble: www.dribbble.com/erwinra7
 													<div class="m-dropdown__header m--align-center">
 														<div class="m-card-user m-card-user--skin-light">
 															<div class="m-card-user__pic">
-																<img src="assets/app/media/img/users/user4.jpg" class="m--img-rounded m--marginless" alt="" />
+																<img src="{{ asset('assets/app/media/img/users/user4.jpg')}}" class="m--img-rounded m--marginless" alt="">
 															</div>
 															<div class="m-card-user__details">
 																<span class="m-card-user__name m--font-weight-500">Mark Andre</span>
@@ -326,17 +398,10 @@ Dribbble: www.dribbble.com/erwinra7
 													</div>
 												</div>
 											</div>
-										</li>
-										<li id="m_quick_sidebar_toggle" class="m-nav__item">
-											<a href="#" class="m-nav__link m-dropdown__toggle">
-												<span class="m-nav__link-icon"><i class="flaticon-grid-menu"></i></span>
-											</a>
-										</li>
+										</li>										
 									</ul>
 								</div>
 							</div>
-
-							<!-- END: Topbar -->
 						</div>
 					</div>
 				</div>
@@ -344,20 +409,64 @@ Dribbble: www.dribbble.com/erwinra7
 
 			<!-- END: Header -->
 
+			 <!-- begin::Body -->
+            <div class="m-grid__item m-grid__item--fluid m-grid m-grid--ver-desktop m-grid--desktop m-body">
+
+                @section('sidebar')
+
+                @show
+
+                @yield('content')
+            </div>
+
+				<!-- end:: Body -->
+				
+				<!-- begin::Footer -->
+            <footer class="m-grid__item		m-footer ">
+                <div class="m-container m-container--fluid m-container--full-height m-page__container">
+                    <div class="m-stack m-stack--flex-tablet-and-mobile m-stack--ver m-stack--desktop">
+                        <div class="m-stack__item m-stack__item--left m-stack__item--middle m-stack__item--last">
+                            <span class="m-footer__copyright">
+                                2019 &copy; Koperasi by <a href="" class="m-link">Koperasi</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+				<!-- end::Footer -->
+			</div>
+
+			<!-- end:: Page -->
+
+        <!-- end::Quick Sidebar -->
+
+        <!-- begin::Scroll Top -->
+        <div id="m_scroll_top" class="m-aside-menu  m-aside-menu--skin-dark m-scroll-top">
+            <i class="la la-arrow-up"></i>
+        </div>
+
+		  <!-- end::Scroll Top -->
+		  
+		  
+			
+
 
 
 
 		<!-- begin::Quick Nav -->
 
 		<!--begin:: Global Mandatory Vendors -->
-		<script src="{{asset('theme/vendors/jquery/dist/jquery.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/popper.js/dist/umd/popper.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/js-cookie/src/js.cookie.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/moment/min/moment.min.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/tooltip.js/dist/umd/tooltip.min.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/perfect-scrollbar/dist/perfect-scrollbar.js')}}" type="text/javascript"></script>
-		<script src="{{asset('theme/vendors/wnumb/wNumb.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/jquery/dist/jquery.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/popper.js/dist/umd/popper.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/bootstrap/dist/js/bootstrap.min.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/js-cookie/src/js.cookie.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/moment/min/moment.min.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/tooltip.js/dist/umd/tooltip.min.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/perfect-scrollbar/dist/perfect-scrollbar.js')}}" type="text/javascript"></script>
+		<script src="{{asset('erwintheme/vendors/wnumb/wNumb.js')}}" type="text/javascript"></script>
+
+		
 
 		<!--end:: Global Mandatory Vendors -->
 
@@ -432,11 +541,33 @@ Dribbble: www.dribbble.com/erwinra7
 		{{-- <!--begin::Page Scripts -->
 		<script src="{{asset('theme/assets/app/js/dashboard.js')}}" type="text/javascript"></script> --}}
 
-        <!--end::Page Scripts -->
+		 
+		<script src="{{ asset('erwintheme/assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('erwintheme/assets/default/base/scripts.bundle.js') }}" type="text/javascript"></script>
+	    <script src="{{ asset('erwintheme/assets/vendors/custom/datatables/datatables.bundle.js') }}" type="text/javascript"></script>
+		<script src="{{ asset('erwintheme/assets/my-asset/script.js') }}" type="text/javascript"></script>
+		<script>
+			var toastForm = '';
+			@foreach($errors->all() as $error)
+			var toastForm = '{{ $error }}';
+			@endforeach
+			
+			var toastInfo = `{{ Session::get('info') }}`;
+			var toastError = `{{ Session::get('error') }}`;
+			var toastSuccess = `{{ Session::get('success') }}`;
 
+			toastr.options.progressBar = true;
+            toastr.options.timeOut = 15000;
 
+			if (toastForm) toastr.warning(toastForm, 'Input Harus Valid');
+			if (toastInfo) toastr.info(toastInfo, 'Info');
+			if (toastError) toastr.error(toastError, 'Gagal');
+			if (toastSuccess) toastr.success(toastSuccess, 'Berhasil');
+		</script>
+		  @yield('script')
+		  
+		   <!--end::Page Scripts -->
 	</body>
-
 
 	<!-- end::Body -->
 </html>
