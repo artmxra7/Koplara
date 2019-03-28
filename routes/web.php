@@ -13,6 +13,8 @@
 
 Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
     Route::get('/', 'Web\DashboardController@index');
     Route::get('/pegawai', 'PegawaiController@index');
     Route::get('/playground', 'Web\playground@list');
