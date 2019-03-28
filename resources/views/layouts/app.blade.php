@@ -121,7 +121,7 @@ Dribbble: www.dribbble.com/erwinra7
 									<ul class="m-topbar__nav m-nav m-nav--inline">
 										<li class="m-nav__item m-dropdown m-dropdown--large m-dropdown--arrow m-dropdown--align-center m-dropdown--mobile-full-width m-dropdown--skin-light	m-list-search m-list-search--skin-light" m-dropdown-toggle="click" id="m_quicksearch" m-quicksearch-mode="dropdown" m-dropdown-persistent="1">
 											<a href="#" class="m-nav__link m-dropdown__toggle">
-												
+
 											</a>
 											<div class="m-dropdown__wrapper" style="z-index: 101;">
 												<span class="m-dropdown__arrow m-dropdown__arrow--center"></span>
@@ -340,8 +340,8 @@ Dribbble: www.dribbble.com/erwinra7
 																<img src="{{ asset('assets/app/media/img/users/user4.jpg')}}" class="m--img-rounded m--marginless" alt="">
 															</div>
 															<div class="m-card-user__details">
-																<span class="m-card-user__name m--font-weight-500">Mark Andre</span>
-																<a href="" class="m-card-user__email m--font-weight-300 m-link">mark.andre@gmail.com</a>
+																<span class="m-card-user__name m--font-weight-500">{{ Auth::user()->name }}</span>
+																<a href="" class="m-card-user__email m--font-weight-300 m-link">{{ Auth::user()->email }}</a>
 															</div>
 														</div>
 													</div>
@@ -375,30 +375,32 @@ Dribbble: www.dribbble.com/erwinra7
 																	</a>
 																</li>
 																<li class="m-nav__separator m-nav__separator--fit">
-																</li>
-																<li class="m-nav__item">
+                                                                </li>
+                                                                {{-- FAQ --}}
+																{{-- <li class="m-nav__item">
 																	<a href="profile.html" class="m-nav__link">
 																		<i class="m-nav__link-icon flaticon-info"></i>
 																		<span class="m-nav__link-text">FAQ</span>
 																	</a>
-																</li>
-																<li class="m-nav__item">
+                                                                </li> --}}
+                                                                {{-- SUPPORT --}}
+																{{-- <li class="m-nav__item">
 																	<a href="profile.html" class="m-nav__link">
 																		<i class="m-nav__link-icon flaticon-lifebuoy"></i>
 																		<span class="m-nav__link-text">Support</span>
 																	</a>
-																</li>
+																</li> --}}
 																<li class="m-nav__separator m-nav__separator--fit">
 																</li>
 																<li class="m-nav__item">
-																	<a href="snippets/pages/user/login-1.html" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
+																	<a href="{{ route('logout') }}" class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">Logout</a>
 																</li>
 															</ul>
 														</div>
 													</div>
 												</div>
 											</div>
-										</li>										
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -417,10 +419,12 @@ Dribbble: www.dribbble.com/erwinra7
                 @show
 
                 @yield('content')
+
+
             </div>
 
 				<!-- end:: Body -->
-				
+
 				<!-- begin::Footer -->
             <footer class="m-grid__item		m-footer ">
                 <div class="m-container m-container--fluid m-container--full-height m-page__container">
@@ -447,9 +451,9 @@ Dribbble: www.dribbble.com/erwinra7
         </div>
 
 		  <!-- end::Scroll Top -->
-		  
-		  
-			
+
+
+
 
 
 
@@ -466,7 +470,7 @@ Dribbble: www.dribbble.com/erwinra7
 		<script src="{{asset('erwintheme/vendors/perfect-scrollbar/dist/perfect-scrollbar.js')}}" type="text/javascript"></script>
 		<script src="{{asset('erwintheme/vendors/wnumb/wNumb.js')}}" type="text/javascript"></script>
 
-		
+
 
 		<!--end:: Global Mandatory Vendors -->
 
@@ -540,8 +544,8 @@ Dribbble: www.dribbble.com/erwinra7
 
 		{{-- <!--begin::Page Scripts -->
 		<script src="{{asset('theme/assets/app/js/dashboard.js')}}" type="text/javascript"></script> --}}
+        <script src="{{ asset('js/app.js') }}"></script>
 
-		 
 		<script src="{{ asset('erwintheme/assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('erwintheme/assets/default/base/scripts.bundle.js') }}" type="text/javascript"></script>
 	    <script src="{{ asset('erwintheme/assets/vendors/custom/datatables/datatables.bundle.js') }}" type="text/javascript"></script>
@@ -551,7 +555,7 @@ Dribbble: www.dribbble.com/erwinra7
 			@foreach($errors->all() as $error)
 			var toastForm = '{{ $error }}';
 			@endforeach
-			
+
 			var toastInfo = `{{ Session::get('info') }}`;
 			var toastError = `{{ Session::get('error') }}`;
 			var toastSuccess = `{{ Session::get('success') }}`;
@@ -565,7 +569,7 @@ Dribbble: www.dribbble.com/erwinra7
 			if (toastSuccess) toastr.success(toastSuccess, 'Berhasil');
 		</script>
 		  @yield('script')
-		  
+
 		   <!--end::Page Scripts -->
 	</body>
 
