@@ -17,5 +17,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/', 'Web\DashboardController@index');
     Route::get('/pegawai', 'PegawaiController@index');
-    Route::get('/playground', 'Web\playground@list');
+    Route::get('/playground', 'Web\playgroundController@view');
 });

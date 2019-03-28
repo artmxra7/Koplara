@@ -419,6 +419,8 @@ Dribbble: www.dribbble.com/erwinra7
                 @show
 
                 @yield('content')
+
+
             </div>
 
 				<!-- end:: Body -->
@@ -542,7 +544,7 @@ Dribbble: www.dribbble.com/erwinra7
 
 		{{-- <!--begin::Page Scripts -->
 		<script src="{{asset('theme/assets/app/js/dashboard.js')}}" type="text/javascript"></script> --}}
-
+        <script src="{{ asset('js/app.js') }}"></script>
 
 		<script src="{{ asset('erwintheme/assets/vendors/base/vendors.bundle.js') }}" type="text/javascript"></script>
 		<script src="{{ asset('erwintheme/assets/default/base/scripts.bundle.js') }}" type="text/javascript"></script>
